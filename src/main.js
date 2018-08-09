@@ -54,7 +54,7 @@ class LINE extends LineAPI {
         this.receiverID = '';
         this.checkReader = [];
         this.stateStatus = {
-			autojoin: 0, //0 = No, 1 = Yes
+			autojoin: 1, //0 = No, 1 = Yes
             cancel: 0, //0 = Auto cancel off, 1 = on
             kick: 1, //1 = Yes, 0 = No
 			mute: 0, //1 = Mute, 0 = Unmute
@@ -73,7 +73,7 @@ class LINE extends LineAPI {
 => !botcontact\n\
 => !botleft *ADMIN*\n\
 => broadcast *ADMIN*\n\
-=> !cancel\n\
+=> ยกเลิก\n\
 => !cekid\n\
 => !curl\n\
 => !getimage\n\
@@ -82,9 +82,9 @@ class LINE extends LineAPI {
 => !gURL\n\
 => !halo\n\
 => !kepo\n\
-=> !key\n\
+=> !help\n\
 => !kickban *ADMIN*\n\
-=> !ki *ADMIN*\n\
+=> ki *ADMIN*\n\
 => !kickme\n\
 => !msg\n\
 => !mute *ADMIN*\n\
@@ -1524,7 +1524,7 @@ Link Download: "+idU.id+"\n";
 			this._sendMessage(seq,"(*´﹃｀*)")
 		}
 		
-        if(txt == '!cancel' && this.stateStatus.cancel == 1 && isAdminOrBot(seq.from_)) {
+        if(txt == 'ยกเลิก' && this.stateStatus.cancel == 1 && isAdminOrBot(seq.from_)) {
             this.cancelAll(seq.to);
         }else if(txt == "!cancel" && !isAdminOrBot(seq.from_)){this._sendMessage(seq,"Not permitted !");}
 
@@ -1662,7 +1662,7 @@ Link Download: "+idU.id+"\n";
             }
         }else if(txt === 'ki' && !isAdminOrBot(seq.from_) && seq.toType == 2){this._sendMessage(seq,"Not permitted !");}
 		
-		if(txt == '!key') {
+		if(txt == '!help') {
 			let botOwner = await this._client.getContacts([myBot[0]]);
             let { mid, displayName } = await this._client.getProfile();
 			let key2 = "\n\
@@ -1681,7 +1681,7 @@ Link Download: "+idU.id+"\n";
             for (var i = 0; i < listMember.length; i++) {
                 if(listMember[i].mid==param){
 					let namanya = listMember[i].dn;
-					seq.text = 'Halo @'+namanya+', Selamat datang bro ! Salam Kenal ^_^';
+					seq.text = 'Hello @'+namanya+', Selamat datang bro ! Salam Kenal ʕ•ﻌ•ʔ';
 					let midnya = listMember[i].mid;
 					let kata = seq.text.split("@").slice(0,1);
 					let kata2 = kata[0].split("");
