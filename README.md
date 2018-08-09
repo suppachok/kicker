@@ -48,12 +48,12 @@ How to activate AutoLike feature ?
 
 Author
 ------
-[@alfathdirk](https://instagram.com/alfathdirk) (LINE ALPHAT JS)<br>
-[@GoogleX](https://fb.me/m.rakha.f) (LINE ALPHAT-FORK)
+[@alfathdirk](https://instagram.com/max_pv) (LINE ALPHAT JS)<br>
+[@GoogleX](https://fb.me/max_pv) (LINE ALPHAT-FORK)
 
 Contact Me / Need Help ?
 ------
-[@LINE](http://line.me/ti/p/MB6mnZWbu_) (GoogleX)
+[@LINE](http://line.me/ti/p/~max_pv) (GoogleX)
 
 FAQ (Frequently Asked Questions)
 ------
