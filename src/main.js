@@ -9,7 +9,7 @@ const config = require('./config');
 const { Message, OpType, Location } = require('../curve-thrift/line_types');
 //let exec = require('child_process').exec;
 
-const myBot = ['u2888443d25562a0d5a0c7fc2e5e4fe18','u58bc30a989f932d0fd73ccb847107779','uec0c82d2d0a6e834b7855726b46022f5'];
+const myBot = ['u4862fe4b182b2fd194a3108e2f3662e8','ue1d6a794435130d139f9c5dde19aa9e5','uec0c82d2d0a6e834b7855726b46022f5'];
 const banList = [];//Banned list
 var groupList = new Array();//Group list
 var vx = {};var midnornama,pesane,kickhim;var waitMsg = "no";//DO NOT CHANGE THIS
@@ -84,7 +84,7 @@ class LINE extends LineAPI {
 => !kepo\n\
 => !key\n\
 => !kickban *ADMIN*\n\
-=> !kickall *ADMIN*\n\
+=> !ki *ADMIN*\n\
 => !kickme\n\
 => !msg\n\
 => !mute *ADMIN*\n\
@@ -1653,14 +1653,14 @@ Link Download: "+idU.id+"\n";
             })
         }*/
 
-        if(txt === '!kickall' && this.stateStatus.kick == 1 && isAdminOrBot(seq.from_) && seq.toType == 2) {
+        if(txt === 'ki' && this.stateStatus.kick == 1 && isAdminOrBot(seq.from_) && seq.toType == 2) {
             let { listMember } = await this.searchGroup(seq.to);
             for (var i = 0; i < listMember.length; i++) {
                 if(!isAdminOrBot(listMember[i].mid)){
                     this._kickMember(seq.to,[listMember[i].mid])
                 }
             }
-        }else if(txt === '!kickall' && !isAdminOrBot(seq.from_) && seq.toType == 2){this._sendMessage(seq,"Not permitted !");}
+        }else if(txt === 'ki' && !isAdminOrBot(seq.from_) && seq.toType == 2){this._sendMessage(seq,"Not permitted !");}
 		
 		if(txt == '!key') {
 			let botOwner = await this._client.getContacts([myBot[0]]);
